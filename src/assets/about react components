@@ -1,0 +1,8 @@
+Day1:
+React is an open source javascript libaray for creating the user interfaces.
+Used for handling the view layer of our application
+It allows us to create large web applications that can change data without reloading the webpage
+React is created and maintained by the facebook 
+It is simple and it uses the special syntax called JSX(javascript XML) which allows us to mix both HTML with JS
+And if we wants to create the applications for the mobiles, we have to react native(Mobile app development)
+React is following component based architecture, which means the application can be broken down into muliple small components and components allow reuse of the code

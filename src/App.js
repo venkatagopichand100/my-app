@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// import SunShine from './assets/sunshine.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const randomNames = ["ram", "laxman", "shivan"];
+
+function getRandomNames(max){
+    return Math.floor(Math.random() * (max + 1));
+}
+
+function Header(){
+    const headerNames = randomNames[getRandomNames(2)]
+    return(
+        <header>
+            {/* <img src = {SunShine} alt = "some image"/> */}
+            <p>
+                My name is {headerNames}
+            </p>
+        </header>
+    );
+}
+
+function Footer(){
+    return(
+        <header>
+            <p>
+                I am from the header component
+            </p>
+        </header>
+    );
+}
+
+function App(){
+    return(
+        <div>
+            <Header />
+            <h1> I am from App component</h1>
+            <Footer />
+        </div>
+    )
 }
 
 export default App;

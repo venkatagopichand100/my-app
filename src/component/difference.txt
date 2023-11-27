@@ -1,0 +1,12 @@
+1) functional component
+//functional component are stateless and its useState
+//lifecycle methods: useEffect to handle the side effects
+//this keyword
+
+
+2) class component
+//statful component
+//class components can manage state using thi.state and this.setState
+//lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount
+//render
+//this keyword to access the properties and methods

@@ -1,0 +1,19 @@
+//props are objects that hold information to control the behaviour of the component
+//the problem with props are they are immutable and we shouldn't change it 
+
+//State is also an object that hold some information but that information may change over the lifetime of that component
+
+
+differences b/w props and react
+
+1) props
+pass from the parent to child component
+props are immutable
+props can be accessed as props and will be passed a the param to the function
+
+
+2) State
+contained inside the component
+state can be changed (mutable)
+useState hook (lifecycle hook in the functional component)
+they are like varibles declared in the function body

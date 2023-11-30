@@ -3,14 +3,25 @@ import {CricketerData} from "./data.js";
 import Cricket from './components/Cricket.js';
 
 function App(){
+    const Mystyles = {
+        color: 'blue',
+        fontSize: '18px',
+        border: '1px solid green',
+        backgroundColor: "green"
+    }
     return(
         <>
             <ul>
-                <Cricket 
+                <Cricket
                     name = {CricketerData[0].name}
                     description = {CricketerData[0].description}
-                    image = {CricketerData[0].image}
-                />
+                    image = {CricketerData[0].image} >
+                    About the sachin 
+                    what ever you want 
+                    somthing
+                    nothing
+                    Cricket
+                </Cricket>
                 <Cricket {...CricketerData[1]}
                 />
                 <Cricket 
@@ -26,6 +37,9 @@ function App(){
                     description = {CricketerData[4].description}
                     image = {CricketerData[4].image}
                 />
+                <div style={Mystyles}>
+                    <p> this is about the inline styles</p>
+                </div>
             </ul>
         </>
     )

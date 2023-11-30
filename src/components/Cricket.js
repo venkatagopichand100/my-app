@@ -1,4 +1,4 @@
-function Cricket({name, description, image}){
+function Cricket({name, description, image, children}){
     // const name = props.name;
     // const description = props.description;
     // const image = props.image;
@@ -8,6 +8,7 @@ function Cricket({name, description, image}){
         <li>
             <p>{name}</p>
             <p>{description}</p>
+            <p>{children}</p>
             <p><img src={image} className="img-thumbnail rounded mx-auto d-block" alt={name}></img></p>
         </li>
     )

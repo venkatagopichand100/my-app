@@ -1,41 +1,33 @@
-// import SunShine from './assets/sunshine.png'
+import { useState } from "react";
+export default function App(){
+    const [firstName, SetFirstName] = useState('');
+    const [lastName, SetLastName] = useState('');
+    const [mobile, SetMobile] = useState('');
+    const [data, setData] = useState("Data");
 
-const randomNames = ["ram", "laxman", "shivan"];
-
-function getRandomNames(max){
-    return Math.floor(Math.random() * (max + 1));
-}
-
-function Header(){
-    const headerNames = randomNames[getRandomNames(2)]
-    return(
-        <header>
-            {/* <img src = {SunShine} alt = "some image"/> */}
-            <p>
-                My name is {headerNames}
-            </p>
-        </header>
-    );
-}
-
-function Footer(){
-    return(
-        <header>
-            <p>
-                I am from the header component
-            </p>
-        </header>
-    );
-}
-
-function App(){
+    const firstNameChangeHandler = (e) =>{
+        SetFirstName(e.target.value);
+    }
+    const lastNameChangeHandler = (e) =>{
+        SetLastName(e.target.value);
+    }
+    const mobileChangeHandler = (e) =>{
+        SetMobile(e.target.value);
+    }
+    const showData = (e) =>{
+        e.preventDefault();
+        setData(firstName + '  ' + lastName + '  '+ mobile);
+        // console.log(e.target.value);
+    }
     return(
         <div>
-            <Header />
-            <h1> I am from App component</h1>
-            <Footer />
+           <form onSubmit={showData}>
+                <input type = "text" placeholder="First Name" onChange={firstNameChangeHandler}/><br/>
+                <input type = "text" placeholder="Last Name" onChange={lastNameChangeHandler}/><br/>
+                <input type = "text" placeholder="Mobile" onChange={mobileChangeHandler} /><br/>
+                <input type = "submit" value="Submit" />
+           </form>
+           {data}
         </div>
-    )
+    );
 }
-
-export default App;

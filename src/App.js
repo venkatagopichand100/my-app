@@ -1,41 +1,65 @@
-// import SunShine from './assets/sunshine.png'
+import "./App.css";
+import { useState } from "react";
+import CricketShow from "./CricketShow";
 
-const randomNames = ["ram", "laxman", "shivan"];
-
-function getRandomNames(max){
-    return Math.floor(Math.random() * (max + 1));
-}
-
-function Header(){
-    const headerNames = randomNames[getRandomNames(2)]
-    return(
-        <header>
-            {/* <img src = {SunShine} alt = "some image"/> */}
-            <p>
-                My name is {headerNames}
-            </p>
-        </header>
-    );
-}
-
-function Footer(){
-    return(
-        <header>
-            <p>
-                I am from the header component
-            </p>
-        </header>
-    );
+function getRandomCricketer(){
+    const cricketers = ["sachin", "dravid", "laxman", "rohit", "virat"];
+    return cricketers[Math.floor(Math.random() * cricketers.length)];
 }
 
 function App(){
+    const [cricketersCount, setCricketCount] = useState([]);
+
+
+    const handleClick = () =>{
+        setCricketCount([...cricketersCount, getRandomCricketer()]);
+    }
+
+    const renderingCricketers = cricketersCount.map((player, index) => {
+        return <CricketShow type = {player} key = {index} />
+    })
     return(
-        <div>
-            <Header />
-            <h1> I am from App component</h1>
-            <Footer />
+        <div className="app">
+            <button onClick={handleClick}>Add cricketers</button>
+            <div className="renderingCricketers">{renderingCricketers}</div>
         </div>
     )
 }
 
-export default App;
+export default App
+
+
+
+
+// import CricketShow from "./CricketerShow";
+
+// function App(){
+//     const handleClick = () =>{
+//         console.log("cricket button is clicked")
+//     }
+//     return(
+//         <div>
+//             <button onClick={handleClick}>Add cricketers</button>
+//         </div>
+//     )
+// }
+
+// export default App
+
+
+// function App(){
+//     const [cricketCount, setCricketCount] = useState(20);
+//     console.log( useState(20));
+//     const handleClick = () =>{
+//        setCricketCount(cricketCount + 1)
+//     }
+//     return(
+//         <div>
+//             <button onClick={handleClick}>Add cricketers</button>
+//             <p>added the cricketers count is {cricketCount}</p>
+//         </div>
+//     )
+// }
+
+
+

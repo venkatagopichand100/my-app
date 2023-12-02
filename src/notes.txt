@@ -1,0 +1,24 @@
+State:
+    Data that changes as the user interacs with the application
+    when the data changes, react will update the content on the screen automatically
+    This is one and only way we can change the that what content reacts show
+
+function App(){
+    const [cricketCount, setCricketCount] = useState(0);
+    const handleClick = () =>{
+       setCricketCount(cricketCount + 1)
+       //setCricketCount is nothing but the function setter funciton used to update our piece of state
+       //cricketCount the piece of state which initial is 0 and will update over the time
+    }
+    return(
+        <div>
+            <button onClick={handleClick}>Add cricketers</button>
+            <p>added the cricketers count is {cricketCount}</p>
+        </div>
+    )
+}
+
+1) useState() -> define a piece of state using the react hook(funciton) called useState function
+2) useState(0) -> we have to provide the value to the useState funciton. this is the default, stating value of our state
+3) {cricketCount} -> use the state value to show the output the user
+4) setCricketCount(cricketCount + 1) -> when the user do something, update the piece of state and it will render in the component

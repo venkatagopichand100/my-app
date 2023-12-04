@@ -1,33 +1,41 @@
-import { useState } from "react";
-export default function App(){
-    const [firstName, SetFirstName] = useState('');
-    const [lastName, SetLastName] = useState('');
-    const [mobile, SetMobile] = useState('');
-    const [data, setData] = useState("Data");
+//class component
 
-    const firstNameChangeHandler = (e) =>{
-        SetFirstName(e.target.value);
+import { Component } from "react";
+
+class App extends Component {
+    // const[counter, setCounter] = useState(0) //functionl component
+    //setCounter(counter + 1)
+    state = {
+        counter: 0
     }
-    const lastNameChangeHandler = (e) =>{
-        SetLastName(e.target.value);
+    increment = () => {
+        let count = this.state.counter;
+        count++;
+        this.setState((state) => {
+            return {
+                counter: count
+            }
+        })
     }
-    const mobileChangeHandler = (e) =>{
-        SetMobile(e.target.value);
+    render(){
+        return(
+            <>
+            <h2>{this.state.counter}</h2>
+            <button onClick={this.increment}>increment</button>
+            </>
+        )
     }
-    const showData = (e) =>{
-        e.preventDefault();
-        setData(firstName + '  ' + lastName + '  '+ mobile);
-        // console.log(e.target.value);
-    }
-    return(
-        <div>
-           <form onSubmit={showData}>
-                <input type = "text" placeholder="First Name" onChange={firstNameChangeHandler}/><br/>
-                <input type = "text" placeholder="Last Name" onChange={lastNameChangeHandler}/><br/>
-                <input type = "text" placeholder="Mobile" onChange={mobileChangeHandler} /><br/>
-                <input type = "submit" value="Submit" />
-           </form>
-           {data}
-        </div>
-    );
+ 
 }
+
+export default App
+
+//1) render()
+//2) import the compoenent from the react
+//3) state
+//4) setState
+//5) if we wanted to call the function we have use this.functionname
+//6) if we wanted to print the value, this.state.counter (in this case)
+
+// useState
+//const [counter, setCounter] = useState(0)

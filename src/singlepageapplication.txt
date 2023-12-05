@@ -1,0 +1,31 @@
+1) single page application 
+SPA will have the main page loaded once and then the sub page sections will be changing without any refresh
+SPA is the modren way of web developement which will be fast and responsive
+
+2) multi page application
+Entire page will be getting reloaded everytime
+traditional approach 
+
+
+Notes to configure the Routes
+
+1) The first step to configure the router is giving a top level or hige order component names <BrowserRouter>
+2) All the routes and components will be wrapped inside the <BrowserRouter> component as it will 
+store the clear URL's internally, using which we actually route through all the components means entire application
+
+Meaning route -> navigating from one page to another page
+
+
+a) <BrowserRouter>
+example: 
+ReactDOM.createRoot(el).render(
+<BrowserRouter>
+<App />
+</BrowserRouter>
+);
+
+b) we need to import import { Route, Routes } from 'react-router-dom';
+
+
+
+

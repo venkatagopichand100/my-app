@@ -15,12 +15,14 @@ function App(){
             </ul>
             <hr/>
             <Routes>
-                <Route path = "/" element = {   <Home />  } />
-                <Route path = "/about" element = {   <About /> } />
-                <Route path = "/players" element = {   <Players /> } >
-                    <Route path=":id" element = {<PlayerDetail /> } />
+                <Route path = "/">
+                    <Route index element = {   <Home />  } />
+                    <Route path = "/about" element = {   <About /> } />
+                    <Route path = "/players" element = {   <Players /> } >
+                        <Route index path=":id" element = {<PlayerDetail /> } />
+                    </Route>
+                    <Route path = '*' element = {<NotFound />} />
                 </Route>
-                <Route path = '*' element = {<NotFound />} />
 
                 {/* //which will recieve all the parameters passed into the URL */}
             </Routes>

@@ -26,6 +26,30 @@ ReactDOM.createRoot(el).render(
 
 b) we need to import import { Route, Routes } from 'react-router-dom';
 
+c) {/* to show the child routes into our application we have to use <Outlet /> */}
+
+---------------------------------------------------------------------------------
+
+index attribute which will refers to the parent Route
+"index" attribute will point the route to its parent Route
+default value will be true for the index in the Routes
+       <Route index element = {   <Home />  } />
+
+d) context and useOutletContext() : passing data from parent component to the child component
+
+if wanted to share the date, like sharing the data from the child component we to use an attribute called "context"
+that can used in the <Outlet /> component
+
+<Outlet context = {Object} />
+with the context attribute we can pass the data as the Object Literal 
+
+The Object is passed to the the child component and to refer the passed data inside the child component 
+we have to use useOutletContext() hook(function)
+
+//useOutletContext() hook help to get the data which is passed with the "context" attribute inside the <Outlet /> component
+
+//state and useLocation() hook, this is the correct way we have to share the data
+
 
 
 

@@ -23,3 +23,26 @@ li{
     height: 70%;
     padding: 2%;
 }
+.playerContainer{
+    border: 5px solid green;
+    width: 50%;
+    height: 20%;
+    padding: 1%;
+    margin: auto;
+    border-radius: 10px;
+}
+.imgContainer{
+    display: inline-block;
+    height: 100%;
+    width: 180px;
+    margin-right: 4%;
+ 
+}
+.imgContainer img{
+    height: 500px;
+    margin: auto;
+    width: 621px;
+}
+.formAlign{
+    text-align: center;
+}

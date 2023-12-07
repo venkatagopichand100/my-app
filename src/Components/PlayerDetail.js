@@ -1,16 +1,18 @@
 import { useParams,useOutletContext, useLocation } from "react-router-dom"
 const PlayerDetail = () => {
     const {id} = useParams()
-    // const playersData = useOutletContext()
-    const location = useLocation();
+    const playersData = useOutletContext()
+    // const location = useLocation();
+    // let stateObj = JSON.stringify(location.state)
     // console.log(location);
     return (
-        <div>
-            <h1>Player Detail Component {id}</h1>
-            {/* <h2>{JSON.stringify(playersData[id-1])}</h2> */}
-            {/* <h2>{JSON.stringify(location)}</h2> */}
-          
-            <h2>{JSON.stringify(location.state)}</h2>
+        <div className="playerContainer">
+            <div className="imgContainer">
+                <img src = {playersData[id-1].img} />
+                <h1>{playersData[id-1].rank}</h1>
+                <h1>{playersData[id-1].Description}</h1>
+            </div>
+
         </div>
     )
 }

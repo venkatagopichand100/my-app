@@ -1,0 +1,48 @@
+
+ .user{
+    background-color: aqua;
+    font-size: 32px;
+ }
+ .label {
+    display: block;
+    font-size: larger;
+    color: black;
+    padding: 5px;
+}
+ 
+.input {
+    font-size: larger;
+    padding: 5px;
+    margin: 2px;
+ 
+}
+ 
+.btn {
+    color: white;
+    background-color: blueviolet;
+    display: block;
+    padding: 5px;
+    margin: 10px auto;
+}
+ 
+.messages {
+    display: flex;
+    justify-content: center;
+}
+ 
+.error {
+    display: block;
+    color: black;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+}
+ 
+.success {
+    display: block;
+    color: black;
+    height: 50px;
+}
+.form{
+    text-align: center;
+}

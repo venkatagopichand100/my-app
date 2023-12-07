@@ -23,6 +23,7 @@ const Players = () => {
                                 <img src={player.img} />
                                 <div>
                                     <h2>{player.playerName}</h2>
+                                    <h3>{player.Description}</h3>
                                 </div>
                                 </Link>
                             </li>

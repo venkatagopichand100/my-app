@@ -1,41 +1,37 @@
-// import SunShine from './assets/sunshine.png'
+import { useState, useCallback } from "react";
+import Name from "./components/Name";
+import Count from "./components/Count";
+import CountBtn from "./components/CountBtn";
+import Player from "./components/Player";
+import PlayerBtn from "./components/PlayerBtn";
 
-const randomNames = ["ram", "laxman", "shivan"];
 
-function getRandomNames(max){
-    return Math.floor(Math.random() * (max + 1));
-}
+const App = () => {
+    const [count, setCount] = useState(0);
+    const [player, setPlayer] = useState(11);
 
-function Header(){
-    const headerNames = randomNames[getRandomNames(2)]
+    const handleCount = useCallback(() => {
+        setCount(count + 1)
+    },[count]);
+
+    const handlePlayer = useCallback(() => {
+        setPlayer(player + 1)
+    },[player])
+
+
+
     return(
-        <header>
-            {/* <img src = {SunShine} alt = "some image"/> */}
-            <p>
-                My name is {headerNames}
-            </p>
-        </header>
-    );
-}
-
-function Footer(){
-    return(
-        <header>
-            <p>
-                I am from the header component
-            </p>
-        </header>
-    );
-}
-
-function App(){
-    return(
-        <div>
-            <Header />
-            <h1> I am from App component</h1>
-            <Footer />
-        </div>
+        <>
+            <Name />
+            <hr />
+            <Count count = {count} />
+            <CountBtn handleCount = {handleCount} />
+            <hr />
+            <Player player = {player} />
+            <PlayerBtn handlePlayer = {handlePlayer} />
+        </>
     )
 }
 
-export default App;
+
+export default App

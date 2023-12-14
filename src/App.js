@@ -1,41 +1,59 @@
-// import SunShine from './assets/sunshine.png'
+// import React, {Component} from "react";
 
-const randomNames = ["ram", "laxman", "shivan"];
+// class App extends Component {
+//     constructor(){
+//         super();
+//         this.state = {
+//             count: 0,
+//         }
+//     }
 
-function getRandomNames(max){
-    return Math.floor(Math.random() * (max + 1));
-}
+//     shouldComponentUpdate(nextProp, nextState){
+//         if(nextState.count % 2 === 0) {
+//             console.log("only should this component in the even number")
+//             return true;
+//         }
+//         return false;
 
-function Header(){
-    const headerNames = randomNames[getRandomNames(2)]
+//     }
+
+//     handleClick = () => {
+//         this.setState((prevState) => ({
+//             count: prevState.count + 1,
+//         }))
+//     }
+
+//     render(){
+//         return (
+//             <div>
+//                 {this.state.count}
+//                 <button onClick={this.handleClick} > Counter</button>
+//             </div>
+//         )
+//     }
+// }
+
+// export default App
+
+import {useEffect, useState} from "react";
+
+const App = () => {
+    const[count, setCount] = useState(0);
+
+    const addData = () => setCount(count + 1);
+
+    useEffect(() => {
+        if(count === 6){
+            alert("the value is 6 or data is about 6 star products")
+        }
+    })
+
     return(
-        <header>
-            {/* <img src = {SunShine} alt = "some image"/> */}
-            <p>
-                My name is {headerNames}
-            </p>
-        </header>
-    );
-}
-
-function Footer(){
-    return(
-        <header>
-            <p>
-                I am from the header component
-            </p>
-        </header>
-    );
-}
-
-function App(){
-    return(
-        <div>
-            <Header />
-            <h1> I am from App component</h1>
-            <Footer />
-        </div>
+        <>
+        <button onClick={addData}>Adding Data</button>
+        {count}
+        </>
     )
 }
 
-export default App;
+export default App
